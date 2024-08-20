@@ -22,7 +22,7 @@ document.getElementById('submit').addEventListener('click', async function() {
         const response = await fetch('https://console.groq.com/keys', {
             method: 'POST',
             headers: {
-                'Authorization': 'Bearer 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', // New API key
+                'Authorization': 'Bearer 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', // Your API key
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data),
@@ -41,6 +41,7 @@ document.getElementById('submit').addEventListener('click', async function() {
             throw new Error('Unexpected response structure');
         }
     } catch (error) {
+        console.error('Fetch Error:', error); // Logs the error in the console
         responseContainer.innerHTML = `<p>Error: ${error.message}</p>`;
     }
 });
