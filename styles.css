@@ -2,71 +2,96 @@ body {
     margin: 0;
     padding: 0;
     background: #0f0c29;  /* Cyber dark background */
-    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: -webkit-linear-gradient(to right, #232526, #414345); /* More subtle gradient */
+    background: linear-gradient(to right, #232526, #414345);
     font-family: 'Courier New', Courier, monospace;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden; /* Prevent scroll on smaller screens */
 }
 
 .cyber-container {
     text-align: center;
     padding: 20px;
     border: 2px solid #00ffcc;
-    border-radius: 10px;
-    box-shadow: 0 0 20px #00ffcc;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #00ffcc;
     max-width: 600px;
+    width: 90%;
+    background-color: #1a1a2e; /* Dark background for better contrast */
 }
 
 .glow {
-    font-size: 2em;
+    font-size: 2.5em;
     color: #00ffcc;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+    text-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffcc, 0 0 45px #00ffcc;
+    margin-bottom: 20px;
+}
+
+.input-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 textarea {
-    width: 100%;
-    height: 100px;
+    width: 80%;
     border: 2px solid #00ffcc;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #000000;
     color: white;
-    padding: 10px;
+    padding: 15px;
     font-size: 1em;
-    margin-bottom: 10px;
+    resize: none;
 }
 
 .glow-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
-    padding: 10px 20px;
+    padding: 10px;
     background-color: #00ffcc;
-    color: #000;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 1em;
+    border-radius: 50%;
+    font-size: 1.2em;
     transition: all 0.3s ease;
+    width: 50px;
+    height: 50px;
+}
+
+.glow-button img {
+    width: 25px;
+    height: 25px;
 }
 
 .glow-button:hover {
-    box-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+    box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
 }
 
 .response-container {
     margin-top: 20px;
-    padding: 10px;
-    background-color: #0f0c29;
+    padding: 15px;
+    background-color: #1a1a2e;
     border: 1px solid #00ffcc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px #00ffcc;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00ffcc;
+    max-height: 300px;
+    overflow-y: auto; /* Scrollable response container */
 }
 
 .response-container p {
-    margin: 0;
+    margin: 10px 0;
     font-size: 1.1em;
     white-space: pre-wrap;
+}
+
+.default-text {
+    color: #00ffcc;
+    opacity: 0.6;
 }
 
 @keyframes glow {
