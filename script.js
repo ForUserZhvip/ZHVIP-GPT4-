@@ -1,9 +1,13 @@
 document.getElementById('submit').addEventListener('click', async function() {
-    const question = document.getElementById('question').value;
+    const question = document.getElementById('question').value.trim();
     const responseContainer = document.getElementById('response');
     responseContainer.innerHTML = '<p>Loading...</p>';
 
-    // Prepare the data to be sent in the POST request
+    if (!question) {
+        responseContainer.innerHTML = '<p>Error: Please enter a question.</p>';
+        return;
+    }
+
     const data = {
         messages: [
             {
@@ -15,11 +19,10 @@ document.getElementById('submit').addEventListener('click', async function() {
     };
 
     try {
-        // Send the POST request to the new Groq API endpoint
         const response = await fetch('https://console.groq.com/keys', {
             method: 'POST',
             headers: {
-                'Authorization': 'Bearer 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', // Replace with actual API key
+                'Authorization': 'Bearer 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', // New API key
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data),
